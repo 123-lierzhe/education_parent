@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sjzc.course.mapper.EduCourseMapper">
+
+    <insert id="insertCourseAndDescription" parameterType="com.sjzc.course.entity.EduCourse">
+        insert into
+        edu_course
+        (
+          id,
+          teacher_id,
+          subject_id,
+          subject_parent_id,
+          title,
+          price,
+          lesson_num,
+          gmt_create,
+          gmt_modified
+        )
+        values
+        (
+          #{id},
+          #{teacherId},
+          #{subjectId},
+          #{subjectParentId},
+          #{title},
+          #{price},
+          #{lessonNum},
+          #{gmtCreate},
+          #{gmtModified}
+        )
+    </insert>
+
+
+
+</mapper>

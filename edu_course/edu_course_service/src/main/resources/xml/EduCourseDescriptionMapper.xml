@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sjzc.course.mapper.EduCourseDescriptionMapper">
+
+    <insert id="insertCourseAndDescription" parameterType="com.sjzc.course.entity.EduCourseDescription">
+        insert into
+        edu_course_description
+        (
+          id,
+          description,
+          gmt_create,
+          gmt_modified
+        )
+        values
+        (
+          #{id},
+          #{description},
+          #{gmtCreate},
+          #{gmtModified}
+        )
+    </insert>
+
+</mapper>
