@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="com_teacher_interface" />
+        <module name="commom_utils" />
+        <module name="edu_aliyunUploada" />
+        <module name="edu_base" />
+        <module name="edu_course_interface" />
+        <module name="edu_course_service" />
+        <module name="edu_eurekaRegister" />
+        <module name="edu_subject_interface" />
+        <module name="edu_subject_service" />
+        <module name="edu_teacher_service" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="com_teacher_interface" options="-parameters" />
+      <module name="commom_utils" options="-parameters" />
+      <module name="edu_aliyunUploada" options="-parameters" />
+      <module name="edu_base" options="-parameters" />
+      <module name="edu_course_interface" options="-parameters" />
+      <module name="edu_course_service" options="-parameters" />
+      <module name="edu_eurekaRegister" options="-parameters" />
+      <module name="edu_subject" options="-parameters" />
+      <module name="edu_subject_interface" options="-parameters" />
+      <module name="edu_subject_service" options="-parameters" />
+      <module name="edu_teacher" options="-parameters" />
+      <module name="edu_teacher_service" options="-parameters" />
+      <module name="education_parent" options="-parameters" />
+    </option>
+  </component>
+</project>

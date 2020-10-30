@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sjzc.subject.mapper.EduSubjectMapper">
+
+    <select id="getOneLevel" resultType="com.sjzc.subject.entity.EduSubject">
+        select * from edu_subject where parent_id = '0' order by gmt_create desc
+    </select>
+
+    <select id="getTwoLevel" resultType="com.sjzc.subject.entity.EduSubject">
+        select * from edu_subject where parent_id != '0' order by gmt_create desc
+    </select>
+
+    <insert id="insertSubject" parameterType="com.sjzc.subject.entity.EduSubject">
+        insert into edu_subject (id,title,parent_id,gmt_create,gmt_modified) values (#{id},#{title},#{parentId},#{gmtCreate},#{gmtModified})
+    </insert>
+
+    <select id="getThisLevel" resultType="com.sjzc.subject.entity.EduSubject">
+        select * from edu_subject where title = #{twoLevel}
+    </select>
+    <select id="getByOneLevel" resultType="com.sjzc.subject.entity.EduSubject">
+        select * from edu_subject where title = #{oneLevel}
+    </select>
+
+    <select id="findById" resultType="com.sjzc.subject.entity.EduSubject">
+        select * from edu_subject where id = #{id}
+    </select>
+
+    <select id="findByParentId" resultType="com.sjzc.subject.entity.EduSubject">
+        select * from edu_subject where parent_id = #{id}
+    </select>
+
+    <delete id="deleteById">
+        delete from edu_subject where id = #{id}
+    </delete>
+
+    <delete id="deleteByIdOrPatentId">
+        delete from edu_subject where id = #{id} || parent_id = #{id}
+    </delete>
+
+</mapper>

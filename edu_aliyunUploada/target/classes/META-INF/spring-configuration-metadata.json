@@ -1,0 +1,32 @@
+{
+  "groups": [
+    {
+      "name": "aliyun.oss.file",
+      "type": "com.sjzc.aliyun.utils.AliyunProperties",
+      "sourceType": "com.sjzc.aliyun.utils.AliyunProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "aliyun.oss.file.bucketname",
+      "type": "java.lang.String",
+      "sourceType": "com.sjzc.aliyun.utils.AliyunProperties"
+    },
+    {
+      "name": "aliyun.oss.file.endpoint",
+      "type": "java.lang.String",
+      "sourceType": "com.sjzc.aliyun.utils.AliyunProperties"
+    },
+    {
+      "name": "aliyun.oss.file.keyid",
+      "type": "java.lang.String",
+      "sourceType": "com.sjzc.aliyun.utils.AliyunProperties"
+    },
+    {
+      "name": "aliyun.oss.file.keysecret",
+      "type": "java.lang.String",
+      "sourceType": "com.sjzc.aliyun.utils.AliyunProperties"
+    }
+  ],
+  "hints": []
+}
