@@ -30,7 +30,7 @@ public class EduCourseServiceImpl implements EduCourseService {
     private EduCourseDescriptionMapper courseDescriptionMapper;
 
     @Override
-    public void insertCourseAndDescription(CourseAndDescribeVo courseAndDescribeVo) {
+    public String insertCourseAndDescription(CourseAndDescribeVo courseAndDescribeVo) {
 
         //添加课程表
         EduCourse course = new EduCourse();
@@ -50,5 +50,7 @@ public class EduCourseServiceImpl implements EduCourseService {
         BeanUtils.copyProperties(courseAndDescribeVo,courseDescription);
         log.info("获取的课程描述为"+courseDescription);
         courseDescriptionMapper.insertCourseAndDescription(courseDescription);
+
+        return uuid;
     }
 }

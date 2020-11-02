@@ -8,6 +8,6 @@ import lombok.Data;
  */
 @Data
 public class TwoLevelSubject {
-    private Integer id;
+    private String id;
     private String title;
 }

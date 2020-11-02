@@ -21,8 +21,8 @@ public class EduCourseController {
     @PostMapping("insertCourseAndDescription")
     public R insertCourseAndDescription(@RequestBody CourseAndDescribeVo courseAndDescribeVo){
         try {
-            courseService.insertCourseAndDescription(courseAndDescribeVo);
-            return R.oK();
+            String courseId = courseService.insertCourseAndDescription(courseAndDescribeVo);
+            return R.oK().data("courseId",courseId);
         }catch (Exception e){
             e.printStackTrace();
             return R.error();

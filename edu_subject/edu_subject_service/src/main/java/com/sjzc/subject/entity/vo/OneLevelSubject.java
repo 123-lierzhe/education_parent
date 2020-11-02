@@ -11,7 +11,7 @@ import java.util.List;
  */
 @Data
 public class OneLevelSubject {
-    private Integer id;
+    private String id;
     private String title;
     private List<TwoLevelSubject> children = new ArrayList<>();
 
