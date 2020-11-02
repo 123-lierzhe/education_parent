@@ -24,7 +24,7 @@ public class EduCourseController {
         if(StringUtils.isBlank(courseAndDescribeVo.getTitle()) || StringUtils.isBlank(courseAndDescribeVo.getDescription()) ||
                 StringUtils.isBlank(courseAndDescribeVo.getTeacherId()) || StringUtils.isBlank(courseAndDescribeVo.getSubjectId()) ||
                 StringUtils.isBlank(courseAndDescribeVo.getSubjectParentId()) || courseAndDescribeVo.getLessonNum()==null ||
-                courseAndDescribeVo.getPrice()==null){
+                courseAndDescribeVo.getPrice()==null || StringUtils.isBlank(courseAndDescribeVo.getCover())){
             return R.error().message("请填写所有选项");
         }
         try {

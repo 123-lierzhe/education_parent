@@ -13,6 +13,7 @@
           title,
           price,
           lesson_num,
+          cover,
           gmt_create,
           gmt_modified
         )
@@ -25,6 +26,7 @@
           #{title},
           #{price},
           #{lessonNum},
+          #{cover},
           #{gmtCreate},
           #{gmtModified}
         )

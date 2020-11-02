@@ -22,5 +22,7 @@ public class CourseAndDescribeVo {
 
     private String subjectParentId;
 
+    private String cover;
+
     private Integer lessonNum;
 }
