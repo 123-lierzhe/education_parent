@@ -1,6 +1,9 @@
 package com.sjzc.course.mapper;
 
+import com.sjzc.course.entity.vo.VideoVo;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * @Auther liez
@@ -8,4 +11,5 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface EduVideoMapper {
+    List<VideoVo> getVideoByCourseId(String courseId);
 }
