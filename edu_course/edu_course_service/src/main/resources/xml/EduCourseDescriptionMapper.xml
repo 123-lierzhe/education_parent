@@ -20,4 +20,14 @@
         )
     </insert>
 
+    <update id="update" parameterType="com.sjzc.course.entity.EduCourseDescription">
+        update
+        edu_course_description
+        <set>
+            <if test="description != null and description != ''">description = #{description},</if>
+            gmt_modified = #{gmtModified}
+        </set>
+        where id =#{id}
+    </update>
+
 </mapper>

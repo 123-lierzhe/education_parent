@@ -32,6 +32,38 @@
         )
     </insert>
 
+    <select id="getCourseAndDescribeByCourseId" resultType="com.sjzc.course.entity.vo.CourseAndDescribeVo">
+        select
+        title,
+        description,
+        teacher_id,
+        subject_id,
+        subject_parent_id,
+        price,
+        cover,
+        lesson_num
+        from
+        edu_course c,edu_course_description d
+        where
+        c.id = d.id and c.id = #{courseId}
+    </select>
+
+    <update id="updateCourse" parameterType="com.sjzc.course.entity.EduCourse">
+        update
+        edu_course
+        <set>
+            <if test="title != null and title != ''"> title = #{title}, </if>
+            <if test="price != null and price != ''"> price = #{price}, </if>
+            <if test="teacherId != null and teacherId != ''"> teacher_id = #{teacherId}, </if>
+            <if test="subjectId != null and subjectId != ''"> subject_id = #{subjectId}, </if>
+            <if test="subjectParentId != null and subjectParentId != ''"> subject_parent_id = #{subjectParentId}, </if>
+            <if test="cover != null and cover != ''"> cover = #{cover},</if>
+            <if test="lessonNum != null and lessonNum != ''"> lesson_num = #{lessonNum}, </if>
+            gmt_modified = #{gmtModified}
+        </set>
+        where id = #{id}
+    </update>
+
 
 
 </mapper>

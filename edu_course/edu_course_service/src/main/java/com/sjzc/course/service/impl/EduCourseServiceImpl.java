@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
+import java.util.Map;
 
 /**
  * @Auther liez
@@ -52,5 +53,31 @@ public class EduCourseServiceImpl implements EduCourseService {
         courseDescriptionMapper.insertCourseAndDescription(courseDescription);
 
         return uuid;
+    }
+
+    @Override
+    public CourseAndDescribeVo getCourseAndDescribeByCourseId(String courseId) {
+        CourseAndDescribeVo courseAndDescribeVo = courseMapper.getCourseAndDescribeByCourseId(courseId);
+        return courseAndDescribeVo;
+    }
+
+    @Override
+    public void updateCourseAndChapterByCourseId(CourseAndDescribeVo courseAndDescribeVo) {
+
+        //更新课程
+        EduCourse eduCourse = new EduCourse();
+        eduCourse.setId(courseAndDescribeVo.getCourseId());
+        eduCourse.setGmtModified(new Date());
+        BeanUtils.copyProperties(courseAndDescribeVo,eduCourse);
+        log.info("更新课程信息为"+eduCourse);
+        courseMapper.updateCourse(eduCourse);
+
+        //跟新课程描述
+        EduCourseDescription eduCourseDescription = new EduCourseDescription();
+        eduCourseDescription.setId(courseAndDescribeVo.getCourseId());
+        eduCourseDescription.setGmtModified(new Date());
+        BeanUtils.copyProperties(courseAndDescribeVo,eduCourseDescription);
+        log.info("更新课程描述信息为"+eduCourseDescription);
+        courseDescriptionMapper.update(eduCourseDescription);
     }
 }

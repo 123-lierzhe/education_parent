@@ -10,6 +10,9 @@ import java.math.BigDecimal;
  */
 @Data
 public class CourseAndDescribeVo {
+
+    private String courseId;
+
     private String title;
 
     private String description;

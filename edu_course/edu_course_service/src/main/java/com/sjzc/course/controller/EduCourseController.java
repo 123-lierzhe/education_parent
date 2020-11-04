@@ -1,11 +1,16 @@
 package com.sjzc.course.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.sjzc.course.entity.vo.CourseAndDescribeVo;
 import com.sjzc.course.service.EduCourseService;
 import com.sjzc.utils.R;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @Auther liez
@@ -34,6 +39,23 @@ public class EduCourseController {
             e.printStackTrace();
             return R.error();
         }
+    }
+
+    @GetMapping("getCourseAndDescribeByCourseId")
+    public R getCourseAndDescribeByCourseId(@RequestParam("courseId") String courseId){
+        CourseAndDescribeVo courseAndDescribeVo = courseService.getCourseAndDescribeByCourseId(courseId);
+        return R.oK().data("course",courseAndDescribeVo);
+    }
+
+    @PostMapping("updateCourseAndChapterByCourseId")
+    public R updateCourseAndChapterByCourseId(@RequestBody  CourseAndDescribeVo courseAndDescribeVo){
+        try {
+            courseService.updateCourseAndChapterByCourseId(courseAndDescribeVo);
+        }catch (Exception e){
+            e.printStackTrace();
+            return R.error();
+        }
+        return R.oK();
     }
 
 }
