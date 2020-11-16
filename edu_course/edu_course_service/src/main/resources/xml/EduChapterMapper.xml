@@ -6,4 +6,8 @@
         select id,title from edu_chapter where course_id = #{courseId}
     </select>
 
+    <insert id="inseertChapter" parameterType="com.sjzc.course.entity.EduChapter">
+        insert into edu_chapter (id,course_id,title,sort,gmt_create,gmt_modified) values (#{id},#{courseId},#{title},#{sort},#{gmtCreate},#{gmtModified})
+    </insert>
+
 </mapper>

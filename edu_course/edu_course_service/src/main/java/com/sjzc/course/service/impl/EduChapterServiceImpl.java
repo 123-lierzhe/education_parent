@@ -1,14 +1,17 @@
 package com.sjzc.course.service.impl;
 
+import com.sjzc.course.entity.EduChapter;
 import com.sjzc.course.entity.vo.ChapterVo;
 import com.sjzc.course.entity.vo.VideoVo;
 import com.sjzc.course.mapper.EduChapterMapper;
 import com.sjzc.course.mapper.EduVideoMapper;
 import com.sjzc.course.service.EduChapterService;
+import com.sjzc.utils.GetUuid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -44,5 +47,13 @@ public class EduChapterServiceImpl implements EduChapterService {
             }
         }
         return chapterVoList;
+    }
+
+    @Override
+    public void insertChapter(EduChapter chapter) {
+        chapter.setId(GetUuid.uuid());
+        chapter.setGmtCreate(new Date());
+        chapter.setGmtModified(new Date());
+        chapterMapper.inseertChapter(chapter);
     }
 }

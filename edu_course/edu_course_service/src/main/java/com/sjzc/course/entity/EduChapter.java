@@ -2,6 +2,8 @@ package com.sjzc.course.entity;
 
 import lombok.Data;
 
+import java.util.Date;
+
 /**
  * @Auther liez
  * @Date 17:41 2020/10/29
@@ -17,7 +19,7 @@ public class EduChapter {
 
     private String sort;
 
-    private String gmtCreate;
+    private Date gmtCreate;
 
-    private String gmtModified;
+    private Date gmtModified;
 }

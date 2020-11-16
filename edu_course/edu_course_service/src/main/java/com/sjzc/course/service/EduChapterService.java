@@ -1,5 +1,6 @@
 package com.sjzc.course.service;
 
+import com.sjzc.course.entity.EduChapter;
 import com.sjzc.course.entity.vo.ChapterVo;
 
 import java.util.List;
@@ -10,4 +11,6 @@ import java.util.List;
  */
 public interface EduChapterService {
     List<ChapterVo> getChapterAndVideoByCourseId(String courseId);
+
+    void insertChapter(EduChapter chapter);
 }

@@ -1,5 +1,6 @@
 package com.sjzc.course.controller;
 
+import com.sjzc.course.entity.EduChapter;
 import com.sjzc.course.entity.vo.ChapterVo;
 import com.sjzc.course.service.EduChapterService;
 import com.sjzc.utils.R;
@@ -33,4 +34,13 @@ public class EduChapterController {
         }
         return R.oK().data("chapterList",chapterList);
     }
+
+    //添加章节
+    @PostMapping("insertChapter")
+    public R insertChapter(@RequestBody EduChapter chapter){
+        chapterService.insertChapter(chapter);
+        return R.oK();
+    }
 }
+
+

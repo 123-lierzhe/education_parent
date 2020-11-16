@@ -1,5 +1,6 @@
 package com.sjzc.course.mapper;
 
+import com.sjzc.course.entity.EduChapter;
 import com.sjzc.course.entity.vo.ChapterVo;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -12,4 +13,6 @@ import java.util.List;
 @Mapper
 public interface EduChapterMapper {
     List<ChapterVo> getChapterByCourseId(String courseId);
+
+    void inseertChapter(EduChapter chapter);
 }
