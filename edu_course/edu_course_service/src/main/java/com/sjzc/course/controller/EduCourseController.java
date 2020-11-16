@@ -44,6 +44,7 @@ public class EduCourseController {
     @GetMapping("getCourseAndDescribeByCourseId")
     public R getCourseAndDescribeByCourseId(@RequestParam("courseId") String courseId){
         CourseAndDescribeVo courseAndDescribeVo = courseService.getCourseAndDescribeByCourseId(courseId);
+        courseAndDescribeVo.setCourseId(courseId);
         return R.oK().data("course",courseAndDescribeVo);
     }
 
