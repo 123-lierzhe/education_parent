@@ -1,6 +1,9 @@
 package com.sjzc.course.service.impl;
 
+import com.sjzc.base.exceptionHandler.EduException;
+import com.sjzc.base.exceptionHandler.ExceptionEnum;
 import com.sjzc.course.entity.EduChapter;
+import com.sjzc.course.entity.EduVideo;
 import com.sjzc.course.entity.vo.ChapterVo;
 import com.sjzc.course.entity.vo.VideoVo;
 import com.sjzc.course.mapper.EduChapterMapper;
@@ -55,5 +58,27 @@ public class EduChapterServiceImpl implements EduChapterService {
         chapter.setGmtCreate(new Date());
         chapter.setGmtModified(new Date());
         chapterMapper.inseertChapter(chapter);
+    }
+
+    @Override
+    public boolean deleteChapter(String chapterId) {
+        List<EduVideo> videoList = videoMapper.getVideoByChapterId(chapterId);
+        if(videoList.size()>0){
+            throw new EduException(ExceptionEnum.CAN_NOT_DELETE);
+        }else{
+            int result = chapterMapper.deleteChapter(chapterId);
+            return result>0;
+        }
+    }
+
+    @Override
+    public EduChapter getById(String chapterId) {
+        return chapterMapper.getById(chapterId);
+    }
+
+    @Override
+    public void updateChapter(EduChapter chapter) {
+        chapter.setGmtModified(new Date());
+        chapterMapper.updateChapter(chapter);
     }
 }

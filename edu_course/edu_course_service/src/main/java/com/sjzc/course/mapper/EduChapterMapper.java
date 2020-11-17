@@ -15,4 +15,10 @@ public interface EduChapterMapper {
     List<ChapterVo> getChapterByCourseId(String courseId);
 
     void inseertChapter(EduChapter chapter);
+
+    int deleteChapter(String chapterId);
+
+    EduChapter getById(String chapterId);
+
+    void updateChapter(EduChapter chapter);
 }

@@ -15,7 +15,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public enum ExceptionEnum {
     TEACHER_IS_NOT_FOUND(404,"未查询到教师"),
-    SUBJECTLIST_IS_NOT_FOUND(404,"为查询到分类")
+    SUBJECTLIST_IS_NOT_FOUND(404,"为查询到分类"),
+    CAN_NOT_DELETE(404,"不能删除")
     ;
     private Integer code;
     private String msg;

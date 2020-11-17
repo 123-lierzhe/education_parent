@@ -13,4 +13,10 @@ public interface EduChapterService {
     List<ChapterVo> getChapterAndVideoByCourseId(String courseId);
 
     void insertChapter(EduChapter chapter);
+
+    boolean deleteChapter(String chapterId);
+
+    EduChapter getById(String chapterId);
+
+    void updateChapter(EduChapter chapter);
 }

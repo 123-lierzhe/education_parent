@@ -10,4 +10,22 @@
         insert into edu_chapter (id,course_id,title,sort,gmt_create,gmt_modified) values (#{id},#{courseId},#{title},#{sort},#{gmtCreate},#{gmtModified})
     </insert>
 
+    <delete id="deleteChapter">
+        delete from edu_chapter where id = #{chapterId}
+    </delete>
+
+    <select id="getById">
+        select * from edu_chapter where id = #{chapterId}
+    </select>
+
+    <update id="updateChapter" parameterType="com.sjzc.course.entity.EduChapter">
+        update
+        edu_chapter
+        <set>
+            <if test="title != null and title != ''">title = #{title}</if>
+            <if test="sort != null and sort != ''">sort = #{sort}</if>
+        </set>
+        where id = #{id}
+    </update>
+
 </mapper>
