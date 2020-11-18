@@ -4,6 +4,7 @@ import com.sjzc.course.entity.EduChapter;
 import com.sjzc.course.entity.vo.ChapterVo;
 import com.sjzc.course.service.EduChapterService;
 import com.sjzc.utils.R;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
@@ -18,6 +19,7 @@ import java.util.List;
 @RestController
 @RequestMapping("chapterService/chapter")
 @CrossOrigin
+@Slf4j
 public class EduChapterController {
 
     @Autowired
@@ -53,6 +55,7 @@ public class EduChapterController {
     @PostMapping("updateChapter")
     public R updateChapter(@RequestBody EduChapter chapter){
         try {
+            System.out.println(chapter);
             chapterService.updateChapter(chapter);
         }catch (Exception e){
             e.printStackTrace();

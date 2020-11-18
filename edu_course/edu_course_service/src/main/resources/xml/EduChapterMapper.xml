@@ -14,7 +14,7 @@
         delete from edu_chapter where id = #{chapterId}
     </delete>
 
-    <select id="getById">
+    <select id="getById" resultType="com.sjzc.course.entity.EduChapter">
         select * from edu_chapter where id = #{chapterId}
     </select>
 
@@ -22,7 +22,7 @@
         update
         edu_chapter
         <set>
-            <if test="title != null and title != ''">title = #{title}</if>
+            <if test="title != null and title != ''">title = #{title},</if>
             <if test="sort != null and sort != ''">sort = #{sort}</if>
         </set>
         where id = #{id}
