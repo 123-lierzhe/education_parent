@@ -2,6 +2,8 @@ package com.sjzc.course.entity;
 
 import lombok.Data;
 
+import java.util.Date;
+
 /**
  * @Auther liez
  * @Date 17:49 2020/10/29
@@ -27,7 +29,7 @@ public class EduVideo {
 
     private Integer isFree;
 
-    private float duration;
+    private Float duration;
 
     private String status;
 
@@ -35,9 +37,9 @@ public class EduVideo {
 
     private Integer version;
 
-    private String gmtCreate;
+    private Date gmtCreate;
 
-    private String gmtModified;
+    private Date gmtModified;
 
 }
 

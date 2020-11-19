@@ -15,4 +15,10 @@ public interface EduVideoMapper {
     List<VideoVo> getVideoByCourseId(String courseId);
 
     List<EduVideo> getVideoByChapterId(String chapterId);
+
+    void insertVideo(EduVideo video);
+
+    void deleteVideo(String videoId);
+
+    void updateVideo(EduVideo video);
 }
