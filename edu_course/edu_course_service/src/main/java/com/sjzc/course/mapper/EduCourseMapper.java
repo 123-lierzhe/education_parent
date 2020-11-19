@@ -2,6 +2,7 @@ package com.sjzc.course.mapper;
 
 import com.sjzc.course.entity.EduCourse;
 import com.sjzc.course.entity.vo.CourseAndDescribeVo;
+import com.sjzc.course.entity.vo.CoursePublishVo;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.Map;
@@ -20,4 +21,6 @@ public interface EduCourseMapper {
     void updateCourseAndChapterByCourseId(Map<String, Object> map);
 
     void updateCourse(EduCourse eduCourse);
+
+    CoursePublishVo getPublishCourse(String courseId);
 }

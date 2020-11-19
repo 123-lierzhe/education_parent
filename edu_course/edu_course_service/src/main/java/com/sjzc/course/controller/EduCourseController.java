@@ -2,6 +2,7 @@ package com.sjzc.course.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.sjzc.course.entity.vo.CourseAndDescribeVo;
+import com.sjzc.course.entity.vo.CoursePublishVo;
 import com.sjzc.course.service.EduCourseService;
 import com.sjzc.utils.R;
 import org.apache.commons.lang3.StringUtils;
@@ -57,6 +58,13 @@ public class EduCourseController {
             return R.error();
         }
         return R.oK();
+    }
+
+    //课程发布页面-信息展示确认-获得页面信息
+    @PostMapping("getPublishCourse/{courseId}")
+    public R getPublishCourse(@PathVariable("courseId") String courseId){
+        CoursePublishVo coursePublishVo = courseService.getPublishCourse(courseId);
+        return R.oK().data("data",coursePublishVo);
     }
 
 }

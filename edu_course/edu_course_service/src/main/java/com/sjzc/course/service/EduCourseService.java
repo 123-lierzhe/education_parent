@@ -1,6 +1,7 @@
 package com.sjzc.course.service;
 
 import com.sjzc.course.entity.vo.CourseAndDescribeVo;
+import com.sjzc.course.entity.vo.CoursePublishVo;
 
 import java.util.Map;
 
@@ -15,4 +16,6 @@ public interface EduCourseService {
     CourseAndDescribeVo getCourseAndDescribeByCourseId(String courseId);
 
     void updateCourseAndChapterByCourseId(CourseAndDescribeVo courseAndDescribeVo);
+
+    CoursePublishVo getPublishCourse(String courseId);
 }

@@ -3,6 +3,7 @@ package com.sjzc.course.service.impl;
 import com.sjzc.course.entity.EduCourse;
 import com.sjzc.course.entity.EduCourseDescription;
 import com.sjzc.course.entity.vo.CourseAndDescribeVo;
+import com.sjzc.course.entity.vo.CoursePublishVo;
 import com.sjzc.course.mapper.EduCourseDescriptionMapper;
 import com.sjzc.course.mapper.EduCourseMapper;
 import com.sjzc.course.service.EduCourseService;
@@ -79,5 +80,10 @@ public class EduCourseServiceImpl implements EduCourseService {
         BeanUtils.copyProperties(courseAndDescribeVo,eduCourseDescription);
         log.info("更新课程描述信息为"+eduCourseDescription);
         courseDescriptionMapper.update(eduCourseDescription);
+    }
+
+    @Override
+    public CoursePublishVo getPublishCourse(String courseId) {
+        return courseMapper.getPublishCourse(courseId);
     }
 }
