@@ -67,4 +67,15 @@ public class EduCourseController {
         return R.oK().data("data",coursePublishVo);
     }
 
+    //发布课程
+    @PostMapping("publishCourse/{courseId}")
+    public R publishCourse(@PathVariable("courseId") String courseId){
+        try {
+            courseService.publishCourse(courseId);
+        }catch (Exception e) {
+            return R.error().message(e.getMessage());
+        }
+        return R.oK();
+    }
+
 }

@@ -85,5 +85,9 @@
 		ec.id = #{courseId}
     </select>
 
+    <update id="publishCourse">
+        update edu_course set status = 'Normal' where id = #{courseId}
+    </update>
+
 
 </mapper>

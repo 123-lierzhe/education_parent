@@ -23,4 +23,6 @@ public interface EduCourseMapper {
     void updateCourse(EduCourse eduCourse);
 
     CoursePublishVo getPublishCourse(String courseId);
+
+    void publishCourse(String courseId);
 }

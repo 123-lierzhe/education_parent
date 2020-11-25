@@ -86,4 +86,9 @@ public class EduCourseServiceImpl implements EduCourseService {
     public CoursePublishVo getPublishCourse(String courseId) {
         return courseMapper.getPublishCourse(courseId);
     }
+
+    @Override
+    public void publishCourse(String courseId) {
+        courseMapper.publishCourse(courseId);
+    }
 }

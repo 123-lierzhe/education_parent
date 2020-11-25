@@ -18,4 +18,6 @@ public interface EduCourseService {
     void updateCourseAndChapterByCourseId(CourseAndDescribeVo courseAndDescribeVo);
 
     CoursePublishVo getPublishCourse(String courseId);
+
+    void publishCourse(String courseId);
 }
