@@ -1,5 +1,8 @@
 package com.sjzc.course.service.impl;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.sjzc.course.entity.EduCourse;
 import com.sjzc.course.entity.EduCourseDescription;
 import com.sjzc.course.entity.vo.CourseAndDescribeVo;
@@ -15,6 +18,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -90,5 +95,25 @@ public class EduCourseServiceImpl implements EduCourseService {
     @Override
     public void publishCourse(String courseId) {
         courseMapper.publishCourse(courseId);
+    }
+
+    @Override
+    public Map<String,Object> getCoursePageByCondition(Map<String, Object> map) {
+
+        Map<String,Object> resultMap = new HashMap<>();
+
+        PageHelper.startPage((int)map.get("current"),(int)map.get("limit"));
+
+        List<EduCourse> courseList = courseMapper.getCoursePageByCondition(map);
+
+        PageInfo<EduCourse> pageInfo = new PageInfo<>(courseList);
+        long total = pageInfo.getTotal();
+
+        resultMap.put("total",total);
+        resultMap.put("courseList",courseList);
+
+        return resultMap;
+
+
     }
 }

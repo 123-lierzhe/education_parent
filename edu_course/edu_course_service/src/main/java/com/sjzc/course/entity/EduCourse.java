@@ -34,7 +34,7 @@ public class EduCourse {
 
     private Integer version;
 
-    private Integer status;
+    private String status;
 
     private Date gmtCreate;
 

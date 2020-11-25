@@ -89,5 +89,31 @@
         update edu_course set status = 'Normal' where id = #{courseId}
     </update>
 
+    <select id="getCoursePageByCondition" resultType="com.sjzc.course.entity.EduCourse">
+        select
+        id,
+        teacher_id,
+        subject_id,
+        subject_parent_id,
+        title,
+        price,
+        lesson_num,
+        cover,
+        buy_count,
+        view_count,
+        version,
+        status,
+        gmt_create,
+        gmt_modified
+        from edu_course
+        <where>
+            <if test="title != '' and title != null">title like concat(concat('%',#{title},'%'))</if>
+            <if test="status != '' and status != null">and status = #{status}</if>
+            <if test="createTime != '' and createTime != null">and gmt_create &gt;= #{createTime}</if>
+            <if test="modifyTime != '' and modifyTime != null">and gmt_modified &lt;= #{modifyTime}</if>
+        </where>
+        order by gmt_modified desc
+    </select>
+
 
 </mapper>

@@ -1,6 +1,7 @@
 package com.sjzc.course.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.sjzc.course.entity.EduCourse;
 import com.sjzc.course.entity.vo.CourseAndDescribeVo;
 import com.sjzc.course.entity.vo.CoursePublishVo;
 import com.sjzc.course.service.EduCourseService;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -76,6 +78,36 @@ public class EduCourseController {
             return R.error().message(e.getMessage());
         }
         return R.oK();
+    }
+
+    //分页获得课程信息列表以及按查询条件过滤
+    @PostMapping("getCoursePageByCondition")
+    public R getCoursePageByCondition(@RequestBody Map<String,Object> map){
+
+        Map<String,Object> conditionMap = new HashMap<>();
+
+        if(!"".equals(map.get("title")) && map.get("title") != null){
+            conditionMap.put("title",map.get("title"));
+        }
+        if(!"".equals(map.get("status")) && map.get("status") != null){
+            conditionMap.put("status",map.get("status"));
+        }
+        if(!"".equals(map.get("createTime")) && map.get("createTime") != null){
+            conditionMap.put("createTime",map.get("createTime"));
+        }
+        if(!"".equals(map.get("modifyTime")) && map.get("modifyTime") != null){
+            conditionMap.put("modifyTime",map.get("modifyTime"));
+        }
+        conditionMap.put("current",map.get("current"));
+        conditionMap.put("limit",map.get("limit"));
+
+        try {
+            Map<String,Object> courseMap  = courseService.getCoursePageByCondition(map);
+            return R.oK().data("data", courseMap);
+        }catch (Exception e){
+            e.printStackTrace();
+            return R.error().message(e.getMessage());
+        }
     }
 
 }

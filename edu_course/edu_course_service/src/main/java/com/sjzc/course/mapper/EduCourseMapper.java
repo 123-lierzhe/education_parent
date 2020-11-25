@@ -5,6 +5,7 @@ import com.sjzc.course.entity.vo.CourseAndDescribeVo;
 import com.sjzc.course.entity.vo.CoursePublishVo;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -25,4 +26,6 @@ public interface EduCourseMapper {
     CoursePublishVo getPublishCourse(String courseId);
 
     void publishCourse(String courseId);
+
+    List<EduCourse> getCoursePageByCondition(Map<String, Object> map);
 }
