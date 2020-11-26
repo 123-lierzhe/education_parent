@@ -16,7 +16,9 @@ import lombok.NoArgsConstructor;
 public enum ExceptionEnum {
     TEACHER_IS_NOT_FOUND(404,"未查询到教师"),
     SUBJECTLIST_IS_NOT_FOUND(404,"为查询到分类"),
-    CAN_NOT_DELETE(404,"不能删除")
+    CAN_NOT_DELETE(404,"不能删除"),
+    DELETE_VIDEO_ERROR(500,"删除视频失败")
+
     ;
     private Integer code;
     private String msg;
