@@ -6,6 +6,10 @@
         select id,chapter_id,title from edu_video where course_id = #{courseId}
     </select>
 
+    <select id="getVideoByCourseId2" resultType="com.sjzc.course.entity.EduVideo">
+        select * from edu_video where course_id = #{courseId}
+    </select>
+
     <select id="getVideoByChapterId" resultType="com.sjzc.course.entity.EduVideo">
         select * from edu_video where chapter_id = #{chapterId}
     </select>

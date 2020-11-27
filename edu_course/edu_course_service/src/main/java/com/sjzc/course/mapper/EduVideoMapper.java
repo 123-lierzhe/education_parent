@@ -23,4 +23,6 @@ public interface EduVideoMapper {
     void updateVideo(EduVideo video);
 
     EduVideo getVideoById(String videoId);
+
+    List<EduVideo> getVideoByCourseId2(String courseId);
 }

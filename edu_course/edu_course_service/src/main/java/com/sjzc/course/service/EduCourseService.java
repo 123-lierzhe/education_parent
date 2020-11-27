@@ -24,4 +24,6 @@ public interface EduCourseService {
     void publishCourse(String courseId);
 
     Map<String,Object> getCoursePageByCondition(Map<String, Object> map);
+
+    void deleteCourse(String courseId);
 }

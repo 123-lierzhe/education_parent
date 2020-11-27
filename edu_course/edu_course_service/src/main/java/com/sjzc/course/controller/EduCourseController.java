@@ -110,4 +110,16 @@ public class EduCourseController {
         }
     }
 
+    //删除课程
+    @PostMapping("deleteCourse/{courseId}")
+    public R deleteCourse(@PathVariable("courseId") String courseId){
+        try {
+            courseService.deleteCourse(courseId);
+        }catch (Exception e){
+            e.printStackTrace();
+            return R.error();
+        }
+        return R.oK();
+    }
+
 }

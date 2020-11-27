@@ -28,4 +28,8 @@ public interface EduCourseMapper {
     void publishCourse(String courseId);
 
     List<EduCourse> getCoursePageByCondition(Map<String, Object> map);
+
+    void deleteCourse(String courseId);
+
+    void deleteDesc(String courseId);
 }

@@ -115,5 +115,13 @@
         order by gmt_modified desc
     </select>
 
+    <delete id="deleteCourse">
+        delete from edu_course where id = #{courseID}
+    </delete>
+
+    <delete id="deleteDesc">
+        delete from edu_course_description where id = #{courseId}
+    </delete>
+
 
 </mapper>
