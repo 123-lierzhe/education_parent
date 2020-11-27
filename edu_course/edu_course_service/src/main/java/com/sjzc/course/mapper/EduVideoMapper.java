@@ -21,4 +21,6 @@ public interface EduVideoMapper {
     void deleteVideo(String videoId);
 
     void updateVideo(EduVideo video);
+
+    EduVideo getVideoById(String videoId);
 }

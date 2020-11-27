@@ -3,6 +3,7 @@ package com.sjzc.aliyun;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @Auther liez
@@ -10,6 +11,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
  */
 
 @SpringBootApplication(scanBasePackages = "com.sjzc",exclude = DataSourceAutoConfiguration.class)
+@EnableDiscoveryClient
 public class AliyunUploadApplication {
     public static void main(String[] args) {
         SpringApplication.run(AliyunUploadApplication.class,args);

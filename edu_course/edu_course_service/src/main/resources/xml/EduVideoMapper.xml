@@ -61,4 +61,28 @@
             <if test=""></if>
         </set>
     </update>
+
+    <select id="getVideoById" resultType="com.sjzc.course.entity.EduVideo">
+        select
+        id,
+        course_id,
+        chapter_id,
+        title,
+        video_source_id,
+        video_original_name,
+        sort,
+        play_count,
+        is_free,
+        duration,
+        status,
+        size,
+        id,
+        version,
+        gmt_create,
+        gmt_modified
+        from
+        edu_video
+        where
+        id = #{videoId}
+    </select>
 </mapper>
