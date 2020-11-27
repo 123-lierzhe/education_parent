@@ -4,7 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.sjzc.base.exceptionHandler.EduException;
 import com.sjzc.base.exceptionHandler.ExceptionEnum;
-import com.sjzc.subject.client.EduTeacherClient;
+//import com.sjzc.subject.client.EduTeacherClient;
 import com.sjzc.subject.entity.EduSubject;
 import com.sjzc.subject.entity.vo.OneLevelSubject;
 import com.sjzc.subject.entity.vo.TwoLevelSubject;
@@ -32,8 +32,8 @@ public class EduSubjectServiceImpl implements EduSubjectService {
 
     @Autowired(required = false)
     private EduSubjectMapper subjectMapper;
-    @Autowired
-    private EduTeacherClient eduTeacherClient;
+//    @Autowired
+//    private EduTeacherClient eduTeacherClient;
 
     @Override
     public R getOneLevelByPage(int current, int limit) {

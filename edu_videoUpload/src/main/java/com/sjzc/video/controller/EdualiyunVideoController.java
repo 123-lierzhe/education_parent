@@ -4,10 +4,7 @@ import com.sjzc.utils.R;
 import com.sjzc.video.service.EduVideoService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.ws.rs.Path;
@@ -18,7 +15,8 @@ import java.util.Map;
  * @Date 17:55 2020/11/25
  */
 @RestController
-@RequestMapping("aliyunVideo/video")
+@CrossOrigin
+@RequestMapping("aliyunService/video")
 public class EdualiyunVideoController {
 
     @Autowired

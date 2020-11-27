@@ -13,7 +13,6 @@ import com.sjzc.video.aliyunClient.AliyunVodSDKUtils;
 import com.sjzc.video.service.EduVideoService;
 import com.sjzc.video.util.ConstantPropertiesUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Service;
