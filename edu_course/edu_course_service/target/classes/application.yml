@@ -31,3 +31,7 @@ mybatis:
 #  instance:
 #    prefer-ip-address: true
 #    ip-address: 127.0.0.1
+#开启熔断机制
+hystrix:
+  metrics:
+    enabled: true

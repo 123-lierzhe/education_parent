@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
  * @Auther liez
  * @Date 11:11 2020/11/27
  */
-@FeignClient("service-video")
+@FeignClient(name = "service-video", fallback = VideoDangerFeignClient.class)
 public interface AliyunVideoClient {
     //删除视频
     @PostMapping("aliyunService/video/deleteVideo/{videoId}")
