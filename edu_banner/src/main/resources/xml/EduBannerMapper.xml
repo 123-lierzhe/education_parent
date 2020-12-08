@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sjzc.banner.mapper.EduBannerMapper">
+
+    <select id="getAllBanner" resultType="com.sjzc.banner.entity.EduBanner">
+        select
+        IFNULL(id,'') id,
+        IFNULL(title,'') title,
+        IFNULL(image_url,'') imageUrl,
+        IFNULL(link_url,'') linkUrl,
+        IFNULL(sort,'') sort,
+        IFNULL(is_deleted,'') isDeleted,
+        IFNULL(gmt_create,'') gmtCreate,
+        IFNULL(gmt_modified,'') gmtModified
+        from crm_banner
+    </select>
+</mapper>

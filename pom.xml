@@ -12,6 +12,7 @@
         <module>edu_eurekaRegister</module>
         <module>edu_course</module>
         <module>edu_videoUpload</module>
+        <module>edu_banner</module>
     </modules>
 
     <parent>
