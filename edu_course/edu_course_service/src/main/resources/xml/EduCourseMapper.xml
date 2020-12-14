@@ -123,5 +123,24 @@
         delete from edu_course_description where id = #{courseId}
     </delete>
 
+    <select id="getAll" resultType="com.sjzc.course.entity.EduCourse">
+        select
+        id,
+        teacher_id,
+        subject_id,
+        subject_parent_id,
+        title,
+        price,
+        lesson_num,
+        cover,
+        buy_count,
+        view_count,
+        version,
+        status,
+        gmt_create,
+        gmt_modified
+        from edu_course order by view_count limit 4
+    </select>
+
 
 </mapper>

@@ -122,4 +122,10 @@ public class EduCourseController {
         return R.oK();
     }
 
+    @GetMapping("getAllCourse")
+    public R getAllCourse(){
+        List<EduCourse> list = courseService.getAll();
+        return R.oK().data("courseList",list);
+    }
+
 }

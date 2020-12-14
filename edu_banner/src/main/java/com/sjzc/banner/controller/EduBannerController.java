@@ -25,4 +25,11 @@ public class EduBannerController {
         List<EduBanner> bannerList = bannerService.getAllBanner();
         return R.oK().data("data",bannerList);
     }
+
+    //分页查询banner
+    @GetMapping("getBannerPage/{page}/{limit}")
+    public R getBannerPage(@PathVariable("page") int page,
+                           @PathVariable("limit") int limit){
+        return bannerService.getBannerPage(page,limit);
+    }
 }

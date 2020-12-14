@@ -2,6 +2,7 @@ package com.sjzc.banner.entity;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Date;
  * @Date 15:43 2020/12/8
  */
 @Data
-public class EduBanner {
+public class EduBanner implements Serializable {
     private String id;
     private String title;
     private String imageUrl;

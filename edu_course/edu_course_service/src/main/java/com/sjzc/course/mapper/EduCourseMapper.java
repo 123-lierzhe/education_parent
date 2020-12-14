@@ -32,4 +32,6 @@ public interface EduCourseMapper {
     void deleteCourse(String courseId);
 
     void deleteDesc(String courseId);
+
+    List<EduCourse> getAll();
 }

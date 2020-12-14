@@ -32,7 +32,7 @@ public class EduTeacherController {
         if(CollectionUtils.isEmpty(teacherList)){
             throw new EduException(ExceptionEnum.TEACHER_IS_NOT_FOUND);
         }
-        return R.oK().data("teachers", teacherList);
+        return R.oK().data("teacherList", teacherList);
 
     }
 

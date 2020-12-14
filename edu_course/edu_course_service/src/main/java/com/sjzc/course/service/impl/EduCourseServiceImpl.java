@@ -159,4 +159,9 @@ public class EduCourseServiceImpl implements EduCourseService {
         courseMapper.deleteCourse(courseId);
         courseMapper.deleteDesc(courseId);
     }
+
+    @Override
+    public List<EduCourse> getAll() {
+        return courseMapper.getAll();
+    }
 }

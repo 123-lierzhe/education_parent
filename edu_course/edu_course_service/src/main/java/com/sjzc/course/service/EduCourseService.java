@@ -26,4 +26,6 @@ public interface EduCourseService {
     Map<String,Object> getCoursePageByCondition(Map<String, Object> map);
 
     void deleteCourse(String courseId);
+
+    List<EduCourse> getAll();
 }

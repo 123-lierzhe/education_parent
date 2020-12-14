@@ -1,6 +1,7 @@
 package com.sjzc.banner.service;
 
 import com.sjzc.banner.entity.EduBanner;
+import com.sjzc.utils.R;
 
 import java.util.List;
 
@@ -10,4 +11,6 @@ import java.util.List;
  */
 public interface EduBannerService {
     List<EduBanner> getAllBanner();
+
+    R getBannerPage(int page, int limit);
 }
