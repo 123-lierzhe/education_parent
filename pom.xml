@@ -13,6 +13,7 @@
         <module>edu_course</module>
         <module>edu_videoUpload</module>
         <module>edu_banner</module>
+        <module>edu_sendMsg</module>
     </modules>
 
     <parent>

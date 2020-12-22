@@ -19,8 +19,8 @@ server:
 aliyun:
   vod:
     file:
-      keyid: gdgsdfgsdg
-      keysecret: gsfsdgsdgsfdg
+      keyid: LTAI4G5ocSDtCo6bhHpF7ma9
+      keysecret: SQs9PkbPj6afcHLPkQPzQgSDJeS0yo
 # 最大上传单个文件大小：默认1M
 #  servlet:
 #    multipart:
