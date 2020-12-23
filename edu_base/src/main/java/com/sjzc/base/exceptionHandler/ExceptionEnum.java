@@ -17,7 +17,8 @@ public enum ExceptionEnum {
     TEACHER_IS_NOT_FOUND(404,"未查询到教师"),
     SUBJECTLIST_IS_NOT_FOUND(404,"为查询到分类"),
     CAN_NOT_DELETE(404,"不能删除"),
-    DELETE_VIDEO_ERROR(500,"删除视频失败")
+    DELETE_VIDEO_ERROR(500,"删除视频失败"),
+    CAN_NOT_FIND_USER(404,"未查询到用户")
 
     ;
     private Integer code;

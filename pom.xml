@@ -14,6 +14,7 @@
         <module>edu_videoUpload</module>
         <module>edu_banner</module>
         <module>edu_sendMsg</module>
+        <module>edu_userCenter</module>
     </modules>
 
     <parent>
