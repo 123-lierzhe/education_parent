@@ -14,6 +14,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.5</version>
+        </dependency>
+        <dependency>
             <groupId>com.sjzc</groupId>
             <artifactId>edu_base</artifactId>
             <version>1.0-SNAPSHOT</version>
