@@ -1,5 +1,7 @@
 package com.sjzc.service;
 
+import com.sjzc.domain.UserConter;
+
 import java.util.Map;
 
 /**
@@ -9,4 +11,6 @@ import java.util.Map;
 public interface UserConterService {
 
     String login(Map<String, Object> requestMap);
+
+    void register(UserConter userConter);
 }

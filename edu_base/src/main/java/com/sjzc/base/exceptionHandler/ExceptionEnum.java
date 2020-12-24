@@ -18,7 +18,8 @@ public enum ExceptionEnum {
     SUBJECTLIST_IS_NOT_FOUND(404,"为查询到分类"),
     CAN_NOT_DELETE(404,"不能删除"),
     DELETE_VIDEO_ERROR(500,"删除视频失败"),
-    CAN_NOT_FIND_USER(404,"未查询到用户")
+    CAN_NOT_FIND_USER(404,"未查询到用户"),
+    MOBILE_CON_NOT_NULL(404,"手机号和微信openid不能同时为空")
 
     ;
     private Integer code;

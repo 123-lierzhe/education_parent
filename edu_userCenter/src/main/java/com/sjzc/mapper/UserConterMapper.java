@@ -13,4 +13,6 @@ import java.util.Map;
 public interface UserConterMapper {
 
     UserConter login(Map<String, Object> requestMap);
+
+    void register(UserConter userConter);
 }

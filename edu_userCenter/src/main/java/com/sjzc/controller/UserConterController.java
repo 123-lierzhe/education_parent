@@ -1,5 +1,6 @@
 package com.sjzc.controller;
 
+import com.sjzc.domain.UserConter;
 import com.sjzc.service.UserConterService;
 import com.sjzc.utils.R;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +37,19 @@ public class UserConterController {
         }
         String token = userConterService.login(requestMap);
         return R.oK().data("token",token);
+    }
+
+    /**
+     * 注册
+     * @return
+     */
+    @PostMapping("register")
+    public R register(@RequestBody UserConter userConter){
+        try {
+            userConterService.register(userConter);
+            return R.oK().message("注册成功");
+        }catch (Exception e){
+            return R.error().message("注册失败");
+        }
     }
 }

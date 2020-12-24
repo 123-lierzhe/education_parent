@@ -22,4 +22,36 @@
         where
         mobile = #{phone} and password = #{password}
     </select>
+
+    <insert id="register" parameterType="com.sjzc.domain.UserConter">
+        insert into
+        ucenter_member
+        (
+        id,
+        openid,
+        mobile,
+        password,
+        nickname,
+        sex,
+        age,
+        avatar,
+        sign,
+        gmt_create,
+        gmt_modified
+        )
+        values
+        (
+        #{id},
+        #{openid},
+        #{mobile},
+        #{password},
+        #{nickname},
+        #{sex},
+        #{age},
+        #{avatar},
+        #{sign},
+        #{gmtCreate},
+        #{gmtModified}
+        )
+    </insert>
 </mapper>
