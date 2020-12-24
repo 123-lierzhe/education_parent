@@ -15,4 +15,6 @@ public interface UserConterMapper {
     UserConter login(Map<String, Object> requestMap);
 
     void register(UserConter userConter);
+
+    UserConter getUserConter(String openid);
 }

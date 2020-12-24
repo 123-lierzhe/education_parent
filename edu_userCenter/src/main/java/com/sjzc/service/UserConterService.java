@@ -13,4 +13,6 @@ public interface UserConterService {
     String login(Map<String, Object> requestMap);
 
     void register(UserConter userConter);
+
+    UserConter getUserConter(String openid);
 }

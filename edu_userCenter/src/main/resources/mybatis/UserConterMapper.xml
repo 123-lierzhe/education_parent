@@ -54,4 +54,8 @@
         #{gmtModified}
         )
     </insert>
+
+    <select id="getUserConter" resultType="com.sjzc.domain.UserConter">
+        select * from ucenter_member where openid = #{openid}
+    </select>
 </mapper>

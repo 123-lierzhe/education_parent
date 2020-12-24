@@ -1,7 +1,10 @@
 package com.sjzc.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.sjzc.domain.UserConter;
+import com.sjzc.service.UserConterService;
 import com.sjzc.util.PropertiesUtils;
+import com.sjzc.utils.GetUuid;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -28,6 +31,8 @@ public class VxLoginController {
 
     @Autowired
     private PropertiesUtils propertiesUtils;
+    @Autowired
+    private UserConterService userConterService;
 
     /**
      * 微信登录步骤1-获得登录二维码
@@ -103,8 +108,16 @@ public class VxLoginController {
             String responseString = EntityUtils.toString(responseEntity);
             JSONObject responseJson = JSONObject.parseObject(responseString);
 
-            //获得用户个人信息
-            if(responseJson != null){
+            UserConter conter = userConterService.getUserConter(String.valueOf(responseJson.get("openid")));
+
+            //如果数据库中已经有该微信的openid。则直接查数据库，否则进行微信接口调用，并进行添加
+            if(conter != null){
+                resultMap.put("data",conter);
+                return resultMap;
+            }else{
+
+                //获得用户个人信息
+
                 String access_token = String.valueOf(responseJson.get("access_token"));
                 String openid = String.valueOf(responseJson.get("openid"));
 
@@ -120,11 +133,14 @@ public class VxLoginController {
                 CloseableHttpResponse anotherHttpResponse = httpClient.execute(anotherHttpGet);
                 HttpEntity entity = anotherHttpResponse.getEntity();
                 String anotherResponseString = EntityUtils.toString(entity);
+
                 JSONObject responseJsonObject = JSONObject.parseObject(anotherResponseString);
                 String country = String.valueOf(responseJsonObject.get("country"));
                 String province = String.valueOf(responseJsonObject.get("province"));
                 String city = String.valueOf(responseJsonObject.get("city"));
                 String nickname = String.valueOf(responseJsonObject.get("nickname"));
+                String headimgurl = String.valueOf(responseJsonObject.get("headimgurl"));
+
                 country = new String(country.getBytes("ISO-8859-1"), "UTF-8");
                 province = new String(province.getBytes("ISO-8859-1"), "UTF-8");
                 city = new String(city.getBytes("ISO-8859-1"), "UTF-8");
@@ -136,10 +152,16 @@ public class VxLoginController {
                 responseJsonObject.replace("nickname",responseJsonObject.get("nickname"),nickname);
                 resultMap.put("data",responseJsonObject);
 
+                UserConter userConter = new UserConter();
+                userConter.setId(GetUuid.uuid());
+                userConter.setOpenid(openid);
+                userConter.setAvatar(headimgurl);
+                userConter.setNickname(nickname);
+
+                userConterService.register(userConter);
+
                 return resultMap;
             }
-
-            return resultMap;
         }catch (Exception e){
 
         }
