@@ -3,6 +3,7 @@ package com.sjzc.course.mapper;
 import com.sjzc.course.entity.EduCourse;
 import com.sjzc.course.entity.vo.CourseAndDescribeVo;
 import com.sjzc.course.entity.vo.CoursePublishVo;
+import com.sjzc.course.entity.vo.SearchCourseVo;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -34,4 +35,6 @@ public interface EduCourseMapper {
     void deleteDesc(String courseId);
 
     List<EduCourse> getAll();
+
+    List<EduCourse> getCoursesPageByCondition(SearchCourseVo courseVo);
 }

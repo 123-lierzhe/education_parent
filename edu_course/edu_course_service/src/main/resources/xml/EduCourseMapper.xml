@@ -142,5 +142,18 @@
         from edu_course order by view_count limit 4
     </select>
 
+    <select id="getCoursesPageByCondition" resultType="com.sjzc.course.entity.EduCourse">
+        select *
+        from
+        edu_course
+        <where>
+            <if test="oneSubject != null and oneSubject != ''">subject_parent_id = #{oneSubject}</if>
+            <if test="twoSubject != null and twoSubject != ''">and subject_id = #{twoSubject}</if>
+        </where>
+        <if test="buyCount != null and buyCount != ''"> order by buy_count desc</if>
+        <if test="gmtCreate != null and gmtCreate != ''">order by gmt_create desc</if>
+        <if test="price != null and price != ''">order by price desc</if>
+    </select>
+
 
 </mapper>

@@ -3,6 +3,7 @@ package com.sjzc.course.service;
 import com.sjzc.course.entity.EduCourse;
 import com.sjzc.course.entity.vo.CourseAndDescribeVo;
 import com.sjzc.course.entity.vo.CoursePublishVo;
+import com.sjzc.course.entity.vo.SearchCourseVo;
 
 import java.util.List;
 import java.util.Map;
@@ -28,4 +29,6 @@ public interface EduCourseService {
     void deleteCourse(String courseId);
 
     List<EduCourse> getAll();
+
+    Map<String,Object> getCoursesPageByCondition(SearchCourseVo courseVo, int page, int limit);
 }

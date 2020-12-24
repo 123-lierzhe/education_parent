@@ -10,6 +10,7 @@ import com.sjzc.course.entity.EduVideo;
 import com.sjzc.course.entity.vo.ChapterVo;
 import com.sjzc.course.entity.vo.CourseAndDescribeVo;
 import com.sjzc.course.entity.vo.CoursePublishVo;
+import com.sjzc.course.entity.vo.SearchCourseVo;
 import com.sjzc.course.mapper.EduChapterMapper;
 import com.sjzc.course.mapper.EduCourseDescriptionMapper;
 import com.sjzc.course.mapper.EduCourseMapper;
@@ -25,6 +26,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.jws.Oneway;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -163,5 +165,22 @@ public class EduCourseServiceImpl implements EduCourseService {
     @Override
     public List<EduCourse> getAll() {
         return courseMapper.getAll();
+    }
+
+    @Override
+    public Map<String,Object> getCoursesPageByCondition(SearchCourseVo courseVo, int page, int limit) {
+
+        Map<String,Object> resultMap = new HashMap<>();
+
+        PageHelper.startPage(page,limit);
+
+        List<EduCourse> courseList = courseMapper.getCoursesPageByCondition(courseVo);
+
+        PageInfo<EduCourse> info = new PageInfo<>(courseList);
+        long total = info.getTotal();
+        resultMap.put("total",total);
+        resultMap.put("data",courseList);
+        return resultMap;
+
     }
 }

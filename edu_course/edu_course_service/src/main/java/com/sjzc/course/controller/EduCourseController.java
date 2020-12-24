@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.sjzc.course.entity.EduCourse;
 import com.sjzc.course.entity.vo.CourseAndDescribeVo;
 import com.sjzc.course.entity.vo.CoursePublishVo;
+import com.sjzc.course.entity.vo.SearchCourseVo;
 import com.sjzc.course.service.EduCourseService;
 import com.sjzc.utils.R;
 import org.apache.commons.lang3.StringUtils;
@@ -128,4 +129,17 @@ public class EduCourseController {
         return R.oK().data("courseList",list);
     }
 
+    /**
+     *
+     * @return R
+     */
+    @PostMapping("getCoursePageByCondition/{page}/{limit}")
+    public R getCoursePageByCondition(@RequestBody(required = false) SearchCourseVo courseVo,
+                                      @PathVariable("page") int page,
+                                      @PathVariable("limit") int limit){
+
+        Map<String,Object> resultMap = courseService.getCoursesPageByCondition(courseVo,page,limit);
+        return R.oK().data("data",resultMap);
+
+    }
 }
