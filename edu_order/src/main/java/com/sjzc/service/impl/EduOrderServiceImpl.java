@@ -82,4 +82,9 @@ public class EduOrderServiceImpl implements EduOrderService {
         orderMapper.insertOrder(order);
 
     }
+
+    @Override
+    public Order getOrderById(String orderNo) {
+        return orderMapper.getOrderById(orderNo);
+    }
 }

@@ -10,4 +10,6 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface EduOrderMapper {
     void insertOrder(Order order);
+
+    Order getOrderById(String orderNo);
 }

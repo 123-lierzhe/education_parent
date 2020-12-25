@@ -40,4 +40,8 @@
         )
     </insert>
 
+    <select id="getOrderById" resultType="com.sjzc.domain.Order">
+        select * from t_order where order_no = #{orderNo}
+    </select>
+
 </mapper>
