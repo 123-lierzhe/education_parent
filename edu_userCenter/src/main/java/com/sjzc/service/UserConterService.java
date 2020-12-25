@@ -15,4 +15,6 @@ public interface UserConterService {
     void register(UserConter userConter);
 
     UserConter getUserConter(String openid);
+
+    UserConter getUserById(String userId);
 }

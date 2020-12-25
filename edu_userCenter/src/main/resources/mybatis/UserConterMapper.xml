@@ -58,4 +58,8 @@
     <select id="getUserConter" resultType="com.sjzc.domain.UserConter">
         select * from ucenter_member where openid = #{openid}
     </select>
+
+    <select id="getUserById" resultType="com.sjzc.domain.UserConter">
+        select * from ucenter_member where id = #{userId}
+    </select>
 </mapper>

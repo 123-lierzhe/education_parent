@@ -4,10 +4,7 @@ import com.sjzc.domain.UserConter;
 import com.sjzc.service.UserConterService;
 import com.sjzc.utils.R;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -51,5 +48,15 @@ public class UserConterController {
         }catch (Exception e){
             return R.error().message("注册失败");
         }
+    }
+
+    /**
+     * 通过id获得会员
+     * @return
+     */
+    @GetMapping("getUserById/{userId}")
+    public R getUserById(@PathVariable("userId") String userId){
+        UserConter userConter = userConterService.getUserById(userId);
+        return R.oK().data("data",userConter);
     }
 }

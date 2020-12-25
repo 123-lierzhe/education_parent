@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sjzc.mapper.EduOrderMapper">
+
+    <insert id="insertOrder" parameterType="com.sjzc.domain.Order">
+        insert into
+        t_order
+        (
+        id,
+        order_no,
+        course_id,
+        course_title,
+        course_cover,
+        teacher_name,
+        member_id,
+        nickname,
+        mobile,
+        total_fee,
+        pay_type,
+        status,
+        gmt_create,
+        gmt_modified
+        )
+        values
+        (
+        #{id},
+        #{orderNo},
+        #{courseId},
+        #{courseTitle},
+        #{courseCover},
+        #{teacherName},
+        #{memberId},
+        #{nickname},
+        #{mobile},
+        #{totalFee},
+        #{payType},
+        #{status},
+        #{gmtCreate},
+        #{gmtModified}
+        )
+    </insert>
+
+</mapper>

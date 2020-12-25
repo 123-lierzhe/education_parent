@@ -17,4 +17,6 @@ public interface UserConterMapper {
     void register(UserConter userConter);
 
     UserConter getUserConter(String openid);
+
+    UserConter getUserById(String userId);
 }

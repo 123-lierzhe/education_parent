@@ -10,14 +10,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.sjzc</groupId>
-    <artifactId>edu_userCenter</artifactId>
+    <artifactId>edu_order</artifactId>
+
 
     <dependencies>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.5.5</version>
-        </dependency>
         <dependency>
             <groupId>com.sjzc</groupId>
             <artifactId>edu_base</artifactId>
@@ -28,13 +24,13 @@
             <artifactId>fastjson</artifactId>
         </dependency>
         <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
         </dependency>
-        <!--hystrix依赖，主要是用  @HystrixCommand -->
+        <!--&lt;!&ndash;hystrix依赖，主要是用  @HystrixCommand &ndash;&gt;-->
         <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
         <!--&lt;!&ndash;服务注册&ndash;&gt;-->
         <dependency>
@@ -43,8 +39,8 @@
         </dependency>
         <!--&lt;!&ndash;服务调用&ndash;&gt;-->
         <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
         <!--<dependency>-->
@@ -131,11 +127,12 @@
             <version>4.12</version>
         </dependency>
 
-
         <dependency>
             <groupId>com.sjzc</groupId>
-            <artifactId>com_teacher_interface</artifactId>
+            <artifactId>edu_course_interface</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
+
+
 </project>

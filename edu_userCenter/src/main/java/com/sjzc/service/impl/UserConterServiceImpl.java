@@ -74,4 +74,9 @@ public class UserConterServiceImpl implements UserConterService {
     public UserConter getUserConter(String openid){
         return userConterMapper.getUserConter(openid);
     }
+
+    @Override
+    public UserConter getUserById(String userId) {
+        return userConterMapper.getUserById(userId);
+    }
 }

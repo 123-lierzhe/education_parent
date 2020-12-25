@@ -1,12 +1,11 @@
 server:
-  port: 8150
-
+  port: 8009
 spring:
   application:
-    name: service-userConter
+    name: service-order
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/education?serverTimezone=UTC&characterEncoding=utf-8
+    url: jdbc:mysql://localhost:3306/education?serverTimezone=Asia/Shanghai&characterEncoding=utf-8
     username: root
     password: root
   profiles:
@@ -15,15 +14,6 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-
-wx:
-  open:
-    appid: wxed9954c01bb89b47
-    appsecret: a7482517235173ddb4083788de60b90e
-    redirecturl: http://guli.shop/api/ucenter/wx/callback
-#  jackson:
-#    date-format: yyyy-MM-dd HH:mm:ss
-#    time-zone: GMT+8
 #  main:
 #    allow-bean-definition-overriding: true
 
@@ -31,7 +21,7 @@ mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
-  mapper-locations: mybatis/*.xml
+  mapper-locations: xml/*.xml
 
 #eureka:
 #  client:
@@ -41,3 +31,7 @@ mybatis:
 #  instance:
 #    prefer-ip-address: true
 #    ip-address: 127.0.0.1
+#开启熔断机制
+hystrix:
+  metrics:
+    enabled: true
