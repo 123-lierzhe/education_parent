@@ -7,6 +7,7 @@ import com.sjzc.base.exceptionHandler.ExceptionEnum;
 //import com.sjzc.subject.client.EduTeacherClient;
 import com.sjzc.subject.entity.EduSubject;
 import com.sjzc.subject.entity.vo.OneLevelSubject;
+import com.sjzc.subject.entity.vo.Subject;
 import com.sjzc.subject.entity.vo.TwoLevelSubject;
 import com.sjzc.subject.mapper.EduSubjectMapper;
 import com.sjzc.subject.service.EduSubjectService;
@@ -189,6 +190,36 @@ public class EduSubjectServiceImpl implements EduSubjectService {
 //    public void updateSubject(Map<String,Object> map) {
 //        subjectMapper.updateSubject(map);
 //    }
+
+    @Override
+    public List<Subject> findAll() {
+        List<Subject> subjectList = subjectMapper.getAll();
+
+        List<Subject> subjects = new ArrayList<>();
+        for (Subject subject : subjectList) {
+            if("0".equals(subject.getParentId())){
+                subject.setLevel(1);
+                subjects.add(selectChildern(subject,subjectList));
+            }
+
+        }
+
+        return subjects;
+    }
+
+    private Subject selectChildern(Subject subject,List<Subject> subjectList){
+        subject.setChildren(new ArrayList<Subject>());
+
+        for (Subject subject1 : subjectList) {
+            if(subject1.getParentId().equals(subject.getId())){
+                subject1.setLevel(subject.getLevel()+1);
+                subject.getChildren().add(selectChildern(subject1,subjectList));
+            }
+
+        }
+        return subject;
+    }
+
 
 
 }

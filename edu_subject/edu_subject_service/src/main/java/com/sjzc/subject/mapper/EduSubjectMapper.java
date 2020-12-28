@@ -1,6 +1,7 @@
 package com.sjzc.subject.mapper;
 
 import com.sjzc.subject.entity.EduSubject;
+import com.sjzc.subject.entity.vo.Subject;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -27,6 +28,8 @@ public interface EduSubjectMapper{
     int deleteById(Integer id);
 
     void deleteByIdOrPatentId(String id);
+
+    List<Subject> getAll();
 
 //    void updateSubject(Map<String,Object> map);
 }

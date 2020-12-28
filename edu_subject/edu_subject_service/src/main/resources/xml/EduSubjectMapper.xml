@@ -37,4 +37,8 @@
         delete from edu_subject where id = #{id} || parent_id = #{id}
     </delete>
 
+    <select id="getAll" resultType="com.sjzc.subject.entity.vo.Subject">
+        select * from edu_subject;
+    </select>
+
 </mapper>

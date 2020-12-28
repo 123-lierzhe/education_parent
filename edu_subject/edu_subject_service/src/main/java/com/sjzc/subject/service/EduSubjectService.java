@@ -2,6 +2,7 @@ package com.sjzc.subject.service;
 
 import com.sjzc.subject.entity.EduSubject;
 import com.sjzc.subject.entity.vo.OneLevelSubject;
+import com.sjzc.subject.entity.vo.Subject;
 import com.sjzc.utils.R;
 
 import java.util.List;
@@ -25,6 +26,8 @@ public interface EduSubjectService{
     List<OneLevelSubject> getAll();
 
     void deleteById(String id);
+
+    List<Subject> findAll();
 
 //    void updateSubject(Map<String,Object> map);
 }

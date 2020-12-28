@@ -4,6 +4,7 @@ package com.sjzc.subject.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.sjzc.subject.entity.EduSubject;
 import com.sjzc.subject.entity.vo.OneLevelSubject;
+import com.sjzc.subject.entity.vo.Subject;
 import com.sjzc.subject.service.EduSubjectService;
 import com.sjzc.utils.R;
 import org.apache.commons.lang3.StringUtils;
@@ -124,5 +125,13 @@ public class EduSubjectController {
 //            return R.error();
 //        }
 //    }
+
+
+    //使用递归查询所有分类
+    @PostMapping("findAll")
+    public R findAll(){
+        List<Subject> subjectList = subjectService.findAll();
+        return R.oK().data("data",subjectList);
+    }
 }
 
