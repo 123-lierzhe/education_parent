@@ -17,4 +17,7 @@ public class PropertiesUtils {
     private String appid;
     private String appsecret;
     private String redirecturl;
+
+    private String sex;
+    private String run;
 }
